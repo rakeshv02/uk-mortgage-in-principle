@@ -1,0 +1,801 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>UK Mortgage in Principle Calculator — Agreement in Principle | Tabutility</title>
+<meta name="description" content="Get a UK mortgage in principle estimate in 4 steps. See how much you can borrow, which mortgage types you qualify for, and your full monthly payment including Council Tax by region and buildings insurance. Free, instant, no sign-up."/>
+<link rel="canonical" href="https://uk-mortgage-in-principle.tabutility.com/"/>
+<meta property="og:type" content="website"/>
+<meta property="og:url" content="https://uk-mortgage-in-principle.tabutility.com/"/>
+<meta property="og:title" content="UK Mortgage in Principle Calculator — How Much Can I Borrow?"/>
+<meta property="og:description" content="Answer 4 questions. See your maximum borrowing, which mortgage types you qualify for, and your full monthly payment — P&amp;I, Council Tax by region, and buildings insurance."/>
+<meta property="og:site_name" content="Tabutility"/>
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="robots" content="index, follow"/>
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🏡</text></svg>"/>
+<meta name="theme-color" content="#0f172a"/>
+<script>window.addEventListener('load',function(){var s=document.createElement('script');s.async=true;s.src='https://www.googletagmanager.com/gtag/js?id=G-78VZWJ5B1W';document.head.appendChild(s);window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}window.gtag=gtag;gtag('js',new Date());gtag('config','G-78VZWJ5B1W');});</script>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7039091592734005" crossorigin="anonymous"></script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"WebApplication","name":"UK Mortgage in Principle Calculator","url":"https://uk-mortgage-in-principle.tabutility.com/","description":"Get a UK mortgage in principle estimate — see how much you can borrow, which mortgage types you qualify for, and your full monthly payment with Council Tax by region.","applicationCategory":"FinanceApplication","operatingSystem":"Any","offers":{"@type":"Offer","price":"0","priceCurrency":"GBP"},"provider":{"@type":"Organization","name":"Tabutility","url":"https://tabutility.com"}}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What is a mortgage in principle (AIP)?","acceptedAnswer":{"@type":"Answer","text":"A mortgage in principle (also called an Agreement in Principle or Decision in Principle) is a written statement from a lender saying they would, in principle, lend you a certain amount. It is based on a soft credit check and your income, but is not a formal mortgage offer. Estate agents often ask for one before accepting offers."}},{"@type":"Question","name":"How much can I borrow for a UK mortgage?","acceptedAnswer":{"@type":"Answer","text":"Most UK lenders use an income multiple of 4–4.5× your gross annual salary. Some lenders offer up to 5–5.5× for high earners, key workers, or first-time buyers. The exact amount depends on your deposit size, credit profile, monthly outgoings, and the lender's stress test (they must check you can afford repayments at 3% above the current rate)."}},{"@type":"Question","name":"What deposit do I need for a UK mortgage?","acceptedAnswer":{"@type":"Answer","text":"Most high-street lenders require at least 5–10% deposit. A 25%+ deposit (75% LTV) unlocks significantly better rates. Buy-to-Let mortgages typically require at least 25% deposit. Shared Ownership lets you buy with as little as 5% of your share."}},{"@type":"Question","name":"What is Shared Ownership?","acceptedAnswer":{"@type":"Answer","text":"Shared Ownership is a government-backed scheme where you buy between 10% and 75% of a property and pay subsidised rent on the remainder to a housing association. You can increase your share over time (staircasing) up to 100%. It requires a smaller deposit because you are only mortgaging your share."}},{"@type":"Question","name":"What is included in the monthly mortgage payment breakdown?","acceptedAnswer":{"@type":"Answer","text":"Your monthly housing costs include: principal and interest on your mortgage, an estimate of Council Tax for your region (Band D average), and buildings insurance (~0.1–0.15% of property value per year). Buy-to-Let mortgages also require landlord insurance instead of buildings insurance."}}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Tabutility","item":"https://tabutility.com"},{"@type":"ListItem","position":2,"name":"UK Mortgage in Principle Calculator","item":"https://uk-mortgage-in-principle.tabutility.com/"}]}</script>
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Segoe UI',system-ui,Arial,sans-serif;background:#0f172a;color:#f1f5f9;min-height:100vh}
+nav{background:#1e293b;border-bottom:1px solid #334155;padding:14px 24px;display:flex;align-items:center;gap:16px}
+nav .brand{color:#fff;font-weight:700;font-size:18px;text-decoration:none}
+nav a{color:#94a3b8;text-decoration:none;font-size:14px}
+nav a:hover{color:#f1f5f9}
+.ad-banner{background:#1e293b;border-bottom:1px solid #334155;padding:4px;text-align:center}
+#app{max-width:720px;margin:0 auto;padding:0 16px 60px}
+h1{font-size:24px;font-weight:800;color:#f1f5f9;margin:28px 0 6px;text-align:center}
+.subtitle{color:#94a3b8;font-size:14px;text-align:center;margin-bottom:24px}
+
+/* Progress */
+.progress{display:flex;align-items:center;justify-content:center;gap:0;margin-bottom:28px}
+.step-dot{width:32px;height:32px;border-radius:50%;border:2px solid #334155;background:#1e293b;color:#64748b;font-size:12px;font-weight:700;display:flex;align-items:center;justify-content:center;transition:.2s;flex-shrink:0}
+.step-dot.active{border-color:#4f46e5;background:#4f46e5;color:#fff}
+.step-dot.done{border-color:#22c55e;background:#22c55e;color:#fff}
+.step-line{width:32px;height:2px;background:#334155;flex-shrink:0}
+.step-line.done{background:#22c55e}
+
+/* Card */
+.card{background:#1e293b;border:1px solid #334155;border-radius:14px;padding:24px;margin-bottom:16px}
+.card-title{font-size:16px;font-weight:700;color:#f1f5f9;margin-bottom:6px}
+.card-hint{font-size:13px;color:#64748b;margin-bottom:20px}
+
+/* Labels & inputs */
+label{display:block;font-size:12px;font-weight:700;color:#94a3b8;margin-bottom:6px;text-transform:uppercase;letter-spacing:.05em;margin-top:18px}
+label:first-of-type{margin-top:0}
+.input-wrap{position:relative}
+.input-prefix{position:absolute;left:12px;top:50%;transform:translateY(-50%);font-size:15px;color:#64748b;font-weight:700}
+input[type=number],input[type=text],select{width:100%;background:#0f172a;border:1px solid #334155;border-radius:8px;padding:11px 14px;color:#f1f5f9;font-size:15px;outline:none;-moz-appearance:textfield;transition:border-color .2s}
+input.has-prefix{padding-left:28px}
+input[type=number]::-webkit-outer-spin-button,input[type=number]::-webkit-inner-spin-button{-webkit-appearance:none}
+input:focus,select:focus{border-color:#818cf8}
+select{appearance:none;cursor:pointer}
+select option{background:#1e293b}
+
+/* Option cards */
+.opts{display:grid;gap:10px;margin-top:4px}
+.opts.cols2{grid-template-columns:1fr 1fr}
+.opts.cols3{grid-template-columns:repeat(3,1fr)}
+.opt{background:#0f172a;border:1.5px solid #334155;border-radius:10px;padding:13px 14px;cursor:pointer;transition:.2s;text-align:left}
+.opt:hover{border-color:#4f46e5}
+.opt.sel{border-color:#4f46e5;background:rgba(79,70,229,.12)}
+.opt-icon{font-size:22px;margin-bottom:6px}
+.opt-label{font-size:13px;font-weight:700;color:#f1f5f9;display:block}
+.opt-sub{font-size:11px;color:#64748b;margin-top:2px}
+
+/* Buttons */
+.btn-row{display:flex;gap:10px;margin-top:20px}
+.btn{flex:1;background:#4f46e5;color:#fff;border:none;border-radius:8px;padding:13px 24px;font-size:15px;font-weight:700;cursor:pointer;transition:background .2s}
+.btn:hover{background:#4338ca}
+.btn.back{background:#1e293b;border:1px solid #334155;color:#94a3b8}
+.btn.back:hover{background:#334155;color:#f1f5f9}
+
+/* Results */
+.res-header{text-align:center;margin:28px 0 20px}
+.res-header h2{font-size:20px;font-weight:800;color:#f1f5f9}
+.res-header p{color:#94a3b8;font-size:13px;margin-top:6px}
+
+/* Max borrowing hero */
+.borrow-hero{background:linear-gradient(135deg,#312e81,#4f46e5);border-radius:14px;padding:24px;text-align:center;margin-bottom:20px}
+.borrow-label{font-size:12px;font-weight:700;color:#a5b4fc;text-transform:uppercase;letter-spacing:.06em;margin-bottom:6px}
+.borrow-amount{font-size:42px;font-weight:900;color:#fff;line-height:1}
+.borrow-sub{font-size:13px;color:#c7d2fe;margin-top:8px}
+.borrow-range{display:flex;justify-content:center;gap:24px;margin-top:14px}
+.borrow-range-item{text-align:center}
+.borrow-range-val{font-size:16px;font-weight:800;color:#e0e7ff}
+.borrow-range-lbl{font-size:10px;color:#818cf8;text-transform:uppercase;letter-spacing:.05em;margin-top:2px}
+
+/* Loan type grid */
+.loan-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:24px}
+.loan-card{background:#1e293b;border:1.5px solid #334155;border-radius:12px;padding:16px;cursor:pointer;transition:.2s;position:relative}
+.loan-card:hover{border-color:#4f46e5}
+.loan-card.active{border-color:#4f46e5;background:rgba(79,70,229,.1)}
+.loan-card.no{opacity:.5;cursor:default}
+.loan-card.no:hover{border-color:#334155}
+.loan-badge{position:absolute;top:10px;right:10px;font-size:10px;font-weight:800;padding:3px 8px;border-radius:99px;letter-spacing:.5px}
+.badge-yes{background:#dcfce7;color:#166534}
+.badge-best{background:#dbeafe;color:#1e40af}
+.badge-partial{background:#fef9c3;color:#854d0e}
+.badge-no{background:#1e293b;color:#475569;border:1px solid #334155}
+.loan-name{font-size:15px;font-weight:800;color:#f1f5f9;margin-bottom:3px}
+.loan-min{font-size:11px;color:#64748b}
+
+/* Monthly breakdown */
+.piti-card{background:#1e293b;border:1px solid #334155;border-radius:14px;padding:22px;margin-bottom:16px}
+.piti-title{font-size:15px;font-weight:800;color:#f1f5f9;margin-bottom:16px;display:flex;align-items:center;gap:8px}
+.piti-row{display:flex;justify-content:space-between;align-items:center;padding:10px 0;border-bottom:1px solid rgba(51,65,85,.5)}
+.piti-row:last-child{border-bottom:none}
+.piti-label{font-size:13px;color:#94a3b8}
+.piti-label small{display:block;font-size:11px;color:#475569;margin-top:2px}
+.piti-val{font-size:15px;font-weight:700;color:#f1f5f9}
+.piti-total{display:flex;justify-content:space-between;align-items:center;background:#0f172a;border:1.5px solid #4f46e5;border-radius:10px;padding:16px;margin-top:12px}
+.piti-total-label{font-size:14px;font-weight:700;color:#a5b4fc}
+.piti-total-val{font-size:28px;font-weight:900;color:#4f46e5}
+
+.rate-row{display:grid;grid-template-columns:1fr 1fr 1fr;gap:10px;margin-bottom:16px}
+.rate-card{background:#1e293b;border:1px solid #334155;border-radius:10px;padding:12px;text-align:center}
+.rate-num{font-size:18px;font-weight:800;color:#f1f5f9}
+.rate-lbl{font-size:10px;color:#64748b;text-transform:uppercase;letter-spacing:.05em;margin-top:3px}
+
+/* Adjuster */
+.adjuster{background:#1e293b;border:1px solid #334155;border-radius:12px;padding:18px;margin-bottom:16px}
+.adj-title{font-size:13px;font-weight:700;color:#94a3b8;margin-bottom:12px;text-transform:uppercase;letter-spacing:.05em}
+.adj-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.adj-item label{margin-top:0;font-size:11px}
+.adj-item input,.adj-item select{font-size:14px;padding:9px 12px}
+
+/* SEO content */
+.seo{margin-top:40px;color:#94a3b8;font-size:14px;line-height:1.7}
+.seo h2{font-size:18px;font-weight:700;color:#f1f5f9;margin:28px 0 10px}
+.seo h3{font-size:15px;font-weight:700;color:#e2e8f0;margin:18px 0 8px}
+.seo p{margin-bottom:12px}
+.seo ul{margin:8px 0 12px 20px}
+.seo ul li{margin-bottom:6px}
+.seo strong{color:#e2e8f0}
+.tax-table{width:100%;border-collapse:collapse;margin:12px 0;font-size:12px}
+.tax-table th{background:#1e293b;color:#94a3b8;padding:8px 10px;text-align:left;font-weight:700;letter-spacing:.04em;text-transform:uppercase}
+.tax-table td{padding:7px 10px;border-bottom:1px solid #1e293b;color:#e2e8f0}
+.tax-table tr:nth-child(even) td{background:#0f172a}
+
+.ltv-bar{height:10px;border-radius:99px;background:#334155;margin:8px 0 4px;overflow:hidden}
+.ltv-fill{height:100%;border-radius:99px;background:#4f46e5;transition:width .5s}
+
+.tag-row{display:flex;flex-wrap:wrap;gap:8px;margin-top:20px}
+.tag{background:#1e293b;border:1px solid #334155;color:#94a3b8;padding:5px 12px;border-radius:99px;font-size:12px;font-weight:600}
+
+.hidden{display:none}
+.info-note{background:rgba(79,70,229,.08);border:1px solid rgba(79,70,229,.3);border-radius:8px;padding:10px 14px;font-size:12px;color:#a5b4fc;margin-top:10px}
+
+@media(max-width:540px){
+  .loan-grid{grid-template-columns:1fr}
+  .opts.cols3{grid-template-columns:1fr 1fr}
+  .opts.cols2{grid-template-columns:1fr}
+  .rate-row{grid-template-columns:1fr 1fr}
+  .adj-grid{grid-template-columns:1fr}
+  .btn-row{flex-direction:column}
+  .borrow-amount{font-size:32px}
+  .borrow-range{gap:16px}
+}
+</style>
+<style id="tabutility-brand-v2">
+.btn,.toggle-btn.active,button.active{color:#fff!important}
+nav .brand{color:#fff}
+nav a:hover{color:#818cf8}
+input:focus,select:focus,textarea:focus{border-color:#818cf8!important}
+ins.adsbygoogle,.ad-banner iframe,.ad-slot iframe,.ad-container iframe{visibility:hidden!important}
+</style>
+</head>
+<body>
+<nav><span class="brand">⚡ Tabutility</span><a href="https://tabutility.com">← All Tools</a></nav>
+<div class="ad-banner" style="min-height:90px"><ins class="adsbygoogle" style="display:block;min-height:90px" data-ad-client="ca-pub-7039091592734005" data-ad-slot="auto" data-ad-format="auto" data-full-width-responsive="true"></ins><script>(adsbygoogle=window.adsbygoogle||[]).push({});</script></div>
+
+<div id="app">
+  <h1>🏡 UK Mortgage in Principle</h1>
+  <p class="subtitle">Answer 4 questions — see how much you can borrow and your full monthly cost</p>
+
+  <!-- PROGRESS -->
+  <div class="progress" id="progressBar">
+    <div class="step-dot active" id="sd1">1</div>
+    <div class="step-line" id="sl1"></div>
+    <div class="step-dot" id="sd2">2</div>
+    <div class="step-line" id="sl2"></div>
+    <div class="step-dot" id="sd3">3</div>
+    <div class="step-line" id="sl3"></div>
+    <div class="step-dot" id="sd4">4</div>
+  </div>
+
+  <!-- STEP 1: Price + Region -->
+  <div id="step1" class="card">
+    <div class="card-title">Property details</div>
+    <div class="card-hint">Enter the property price and the UK region where it is located.</div>
+    <label>Property Price</label>
+    <div class="input-wrap"><span class="input-prefix">£</span><input type="number" id="price" class="has-prefix" placeholder="300000" min="50000" step="5000" value="300000"/></div>
+    <label>UK Region</label>
+    <select id="region"></select>
+    <div id="ctNote" style="font-size:12px;color:#64748b;margin-top:8px"></div>
+    <div class="btn-row"><button class="btn" onclick="goStep(2)">Next →</button></div>
+  </div>
+
+  <!-- STEP 2: Deposit -->
+  <div id="step2" class="card hidden">
+    <div class="card-title">Deposit</div>
+    <div class="card-hint">How much deposit do you have? A larger deposit unlocks lower rates and more lenders.</div>
+    <label>Deposit Amount</label>
+    <div class="input-wrap"><span class="input-prefix">£</span><input type="number" id="depAmt" class="has-prefix" placeholder="30000" min="0" step="1000" value="30000" oninput="syncDep('amt')"/></div>
+    <label>Or as a Percentage (LTV)</label>
+    <div class="input-wrap" style="position:relative"><input type="number" id="depPct" placeholder="10" min="0" max="100" step="0.5" value="10" oninput="syncDep('pct')" style="padding-left:14px;padding-right:28px"/><span style="position:absolute;right:12px;top:50%;transform:translateY(-50%);color:#64748b">%</span></div>
+
+    <!-- LTV bar -->
+    <div style="margin-top:14px">
+      <div style="display:flex;justify-content:space-between;font-size:11px;color:#64748b;margin-bottom:4px">
+        <span>LTV</span><span id="ltvPct">90%</span>
+      </div>
+      <div class="ltv-bar"><div class="ltv-fill" id="ltvFill" style="width:10%"></div></div>
+      <div style="display:flex;justify-content:space-between;font-size:10px;color:#475569;margin-top:3px">
+        <span>0% — best rates</span><span>95% — max LTV</span>
+      </div>
+    </div>
+
+    <div id="depNote" style="font-size:12px;color:#94a3b8;margin-top:10px"></div>
+    <div class="btn-row">
+      <button class="btn back" onclick="goStep(1)">← Back</button>
+      <button class="btn" onclick="goStep(3)">Next →</button>
+    </div>
+  </div>
+
+  <!-- STEP 3: Credit Profile -->
+  <div id="step3" class="card hidden">
+    <div class="card-title">Credit profile</div>
+    <div class="card-hint">Select the option that best describes your credit history. UK lenders run a soft or hard credit check as part of an AIP.</div>
+    <div class="opts">
+      <div class="opt" onclick="pick('credit','excellent',this)">
+        <div class="opt-label">✅ &nbsp; Excellent</div>
+        <div class="opt-sub">No missed payments, no CCJs, credit card utilisation below 30%</div>
+      </div>
+      <div class="opt" onclick="pick('credit','good',this)">
+        <div class="opt-label">👍 &nbsp; Good</div>
+        <div class="opt-sub">Mostly on time, occasional late payment 2+ years ago, no CCJs</div>
+      </div>
+      <div class="opt" onclick="pick('credit','fair',this)">
+        <div class="opt-label">⚠️ &nbsp; Fair</div>
+        <div class="opt-sub">Some missed payments in past 3 years, high utilisation, no recent CCJ</div>
+      </div>
+      <div class="opt" onclick="pick('credit','poor',this)">
+        <div class="opt-label">❌ &nbsp; Poor / Adverse</div>
+        <div class="opt-sub">CCJs, defaults, IVA, bankruptcy in past 6 years</div>
+      </div>
+    </div>
+    <div class="btn-row">
+      <button class="btn back" onclick="goStep(2)">← Back</button>
+      <button class="btn" onclick="goStep(4)">Next →</button>
+    </div>
+  </div>
+
+  <!-- STEP 4: Income Type -->
+  <div id="step4" class="card hidden">
+    <div class="card-title">Income situation</div>
+    <div class="card-hint">How you earn affects which lenders will consider you and how much they'll lend.</div>
+
+    <label>Gross Annual Income (£)</label>
+    <div class="input-wrap"><span class="input-prefix">£</span><input type="number" id="income1" class="has-prefix" placeholder="55000" min="0" step="1000" value="55000"/></div>
+    <label>Partner's Income (£, if applicable)</label>
+    <div class="input-wrap"><span class="input-prefix">£</span><input type="number" id="income2" class="has-prefix" placeholder="0" min="0" step="1000" value="0"/></div>
+
+    <label style="margin-top:18px">Income Type</label>
+    <div class="opts cols2">
+      <div class="opt" onclick="pick('incType','paye',this)">
+        <div class="opt-icon">💼</div>
+        <div class="opt-label">PAYE Employee</div>
+        <div class="opt-sub">Regular salary, payslips available</div>
+      </div>
+      <div class="opt" onclick="pick('incType','selfemployed',this)">
+        <div class="opt-icon">🧾</div>
+        <div class="opt-label">Self-Employed</div>
+        <div class="opt-sub">2 years' SA302s or accounts</div>
+      </div>
+      <div class="opt" onclick="pick('incType','contractor',this)">
+        <div class="opt-icon">📋</div>
+        <div class="opt-label">Contractor</div>
+        <div class="opt-sub">Day rate × 48 weeks used by many lenders</div>
+      </div>
+      <div class="opt" onclick="pick('incType','parttime',this)">
+        <div class="opt-icon">⏱️</div>
+        <div class="opt-label">Part-Time / Zero Hours</div>
+        <div class="opt-sub">Lenders may average last 2 years</div>
+      </div>
+      <div class="opt" onclick="pick('incType','pension',this)">
+        <div class="opt-icon">🏦</div>
+        <div class="opt-label">Retirement / Pension</div>
+        <div class="opt-sub">State + private pension income</div>
+      </div>
+      <div class="opt" onclick="pick('incType','btl',this)">
+        <div class="opt-icon">🏘️</div>
+        <div class="opt-label">Landlord / Investor</div>
+        <div class="opt-sub">Rental income qualifies for BTL</div>
+      </div>
+    </div>
+    <div class="btn-row">
+      <button class="btn back" onclick="goStep(3)">← Back</button>
+      <button class="btn" onclick="showResults()">Get My Estimate →</button>
+    </div>
+  </div>
+
+  <!-- RESULTS -->
+  <div id="results" class="hidden">
+    <div class="res-header">
+      <h2 id="res-title">Your Mortgage in Principle</h2>
+      <p id="res-sub"></p>
+    </div>
+
+    <!-- Max borrowing hero -->
+    <div class="borrow-hero" id="borrowHero">
+      <div class="borrow-label">Estimated Maximum Borrowing</div>
+      <div class="borrow-amount" id="borrowAmt">—</div>
+      <div class="borrow-sub" id="borrowSub">Based on 4.5× income multiple</div>
+      <div class="borrow-range" id="borrowRange"></div>
+    </div>
+
+    <!-- Mortgage type eligibility -->
+    <div class="loan-grid" id="loanGrid"></div>
+
+    <!-- Assumptions adjuster -->
+    <div class="adjuster">
+      <div class="adj-title">Adjust Rate &amp; Term</div>
+      <div class="adj-grid">
+        <div class="adj-item">
+          <label>Interest Rate (%)</label>
+          <input type="number" id="adjRate" step="0.05" min="1" max="20" value="4.75" oninput="renderBreakdown()"/>
+        </div>
+        <div class="adj-item">
+          <label>Mortgage Term (years)</label>
+          <select id="adjTerm" onchange="renderBreakdown()">
+            <option value="35">35 years</option>
+            <option value="30" selected>30 years</option>
+            <option value="25">25 years</option>
+            <option value="20">20 years</option>
+            <option value="15">15 years</option>
+            <option value="10">10 years</option>
+          </select>
+        </div>
+        <div class="adj-item">
+          <label>Loan Amount (£)</label>
+          <input type="number" id="adjLoan" step="5000" min="10000" oninput="renderBreakdown()"/>
+        </div>
+        <div class="adj-item">
+          <label>Buildings Insurance (£/yr)</label>
+          <input type="number" id="adjIns" step="50" min="0" placeholder="Auto" oninput="renderBreakdown()"/>
+        </div>
+      </div>
+    </div>
+
+    <!-- Monthly breakdown -->
+    <div class="piti-card" id="pitiCard">
+      <div class="piti-title" id="pitiTitle">📋 Monthly Cost Breakdown</div>
+      <div id="pitiRows"></div>
+      <div class="piti-total">
+        <div class="piti-total-label">TOTAL MONTHLY</div>
+        <div class="piti-total-val" id="pitiTotal">—</div>
+      </div>
+    </div>
+
+    <!-- Key stats -->
+    <div class="rate-row" id="keyStats"></div>
+
+    <div style="text-align:center;margin:16px 0">
+      <button class="btn back" onclick="restart()" style="display:inline-block;width:auto;padding:10px 24px;font-size:13px">← Start Over</button>
+    </div>
+
+    <!-- SEO content -->
+    <div class="seo">
+      <h2>UK Mortgage Types Explained</h2>
+
+      <h3>Residential Mortgage</h3>
+      <p>The standard mortgage type for owner-occupiers. You can borrow up to 4.5× your gross income (some lenders offer 5–5.5× for higher earners). Minimum deposit is typically 5–10%, though 20%+ gives access to the best rates. Most lenders offer fixed-rate deals of 2 or 5 years, after which you move to a Standard Variable Rate (SVR) unless you remortgage.</p>
+
+      <h3>Buy-to-Let (BTL) Mortgage</h3>
+      <p>For landlords purchasing property to rent out. Most lenders require at least a <strong>25% deposit</strong> (75% LTV) and assess affordability based on expected rental income — typically the monthly rent must cover 125–145% of the interest-only mortgage payment. Personal income is often assessed as a secondary check. BTL rates are usually 0.5–1% higher than residential rates.</p>
+
+      <h3>Shared Ownership</h3>
+      <p>A government-backed scheme where you buy a share (between 10% and 75%) of a property and pay subsidised rent on the remaining share to a housing association. You only need a mortgage for your share, so deposit requirements are much smaller. You can increase your ownership share over time (called <strong>staircasing</strong>) until you own 100%. Available on new-build and resale properties via registered providers.</p>
+
+      <h3>Help to Buy: Equity Loan (Wales)</h3>
+      <p>The Help to Buy Equity Loan scheme in Wales offers a government loan of up to 20% of a new-build property's value (on homes up to £300,000), meaning you only need a 5% deposit and a 75% LTV mortgage. The government loan is interest-free for the first 5 years. England's scheme closed in March 2023. Check the Welsh Government website for current eligibility and property limits.</p>
+
+      <h2>UK Income Multiples by Lender Type</h2>
+      <p>Most lenders apply an income multiple to your gross annual earnings to determine the maximum loan. The table below shows typical multiples as of 2025:</p>
+      <table class="tax-table">
+        <tr><th>Lender Type</th><th>Typical Multiple</th><th>Notes</th></tr>
+        <tr><td>High Street (standard)</td><td>4.0–4.5×</td><td>Applies to most borrowers</td></tr>
+        <tr><td>High Street (key worker / FTB)</td><td>5.0–5.5×</td><td>NHS, teachers, police; subject to scheme eligibility</td></tr>
+        <tr><td>High Street (income &gt; £75k)</td><td>5.0–5.5×</td><td>Higher earners, professional mortgages</td></tr>
+        <tr><td>Building Society</td><td>4.5–5.0×</td><td>Often more flexible on income types</td></tr>
+        <tr><td>Specialist / Private Bank</td><td>5.0–6.0×</td><td>Complex incomes, HNW borrowers</td></tr>
+        <tr><td>Buy-to-Let</td><td>Rental coverage</td><td>Rent ≥ 125–145% of interest payment</td></tr>
+      </table>
+
+      <h2>Council Tax by UK Region (Band D, 2024/25)</h2>
+      <p>Council Tax is a separate charge from your mortgage, paid to the local council. Rates vary significantly by authority and band. The figures below are average Band D annual charges by region (source: GOV.UK / ONS 2024/25):</p>
+      <table class="tax-table">
+        <tr><th>Region</th><th>Avg Annual (Band D)</th><th>Monthly Estimate</th></tr>
+        <tr><td>London</td><td>£1,855</td><td>£155</td></tr>
+        <tr><td>South East</td><td>£2,097</td><td>£175</td></tr>
+        <tr><td>South West</td><td>£2,163</td><td>£180</td></tr>
+        <tr><td>East of England</td><td>£2,176</td><td>£181</td></tr>
+        <tr><td>East Midlands</td><td>£2,173</td><td>£181</td></tr>
+        <tr><td>West Midlands</td><td>£2,183</td><td>£182</td></tr>
+        <tr><td>Yorkshire &amp; Humber</td><td>£2,178</td><td>£182</td></tr>
+        <tr><td>North West</td><td>£2,218</td><td>£185</td></tr>
+        <tr><td>North East</td><td>£2,307</td><td>£192</td></tr>
+        <tr><td>Wales</td><td>£1,955</td><td>£163</td></tr>
+        <tr><td>Scotland</td><td>£1,528</td><td>£127</td></tr>
+        <tr><td>Northern Ireland</td><td>£950</td><td>£79</td></tr>
+      </table>
+
+      <h2>What Is an Agreement in Principle?</h2>
+      <p>An <strong>Agreement in Principle (AIP)</strong> — also called a Decision in Principle (DIP) or Mortgage in Principle — is a conditional statement from a lender confirming they would lend you a certain amount, subject to full application and property valuation. Most estate agents require one before accepting an offer.</p>
+      <ul>
+        <li><strong>Soft AIP:</strong> uses a soft credit search — does not affect your credit score. Most online tools issue these.</li>
+        <li><strong>Hard AIP:</strong> uses a hard credit search — visible to other lenders for 12 months. Only a few providers use these upfront.</li>
+        <li>An AIP is valid for 60–90 days and does not guarantee a formal mortgage offer.</li>
+        <li>To get an actual AIP, approach a lender directly or use a whole-of-market broker.</li>
+      </ul>
+
+      <h2>UK Mortgage Rate Types</h2>
+      <h3>Fixed Rate</h3>
+      <p>Your interest rate is fixed for an initial period (typically 2 or 5 years), giving payment certainty. After the fix ends, you revert to the lender's SVR unless you remortgage. As of mid-2025, 2-year fixes are around 4.5–5.0% and 5-year fixes around 4.2–4.75% for 75% LTV borrowers.</p>
+      <h3>Tracker</h3>
+      <p>Tracks the Bank of England base rate plus a set margin (e.g. Base Rate + 1%). Payments change when the base rate changes. Usually has no early repayment charges, making it flexible.</p>
+      <h3>Standard Variable Rate (SVR)</h3>
+      <p>The default rate you move to after a fix or tracker expires. Set by the lender and can change at any time — typically 1–2% above current fixed rates. Switching to a new deal before reverting to SVR almost always saves money.</p>
+
+      <h2>Stress Testing</h2>
+      <p>UK lenders must assess whether you can still afford the mortgage if rates rise by approximately 3% above the current rate. This affordability stress test, introduced by the FCA, means the maximum loan you qualify for on paper (income multiple) is often reduced in practice to meet the stress test. If rates are 4.75%, lenders test your ability to pay at ~7.75%.</p>
+
+      <div class="tag-row">
+        <span class="tag">mortgage in principle</span>
+        <span class="tag">agreement in principle</span>
+        <span class="tag">how much can I borrow UK</span>
+        <span class="tag">UK mortgage calculator</span>
+        <span class="tag">buy-to-let mortgage</span>
+        <span class="tag">shared ownership mortgage</span>
+        <span class="tag">council tax by region</span>
+        <span class="tag">UK mortgage deposit</span>
+        <span class="tag">LTV calculator</span>
+        <span class="tag">first-time buyer mortgage UK</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Amazon affiliate block -->
+<div style="margin:0 auto 24px;max-width:720px;background:#1e293b;border-radius:10px;padding:14px 18px;display:flex;align-items:center;gap:14px;cursor:pointer;border:1px solid #334155" onclick="window.open('https://www.amazon.co.uk/s?k=mortgage+property+buying+guide+UK&tag=tabutility-20','_blank','noopener noreferrer')" title="Buying your first home or remortgaging?">
+  <span style="font-size:28px;flex-shrink:0">📚</span>
+  <div style="min-width:0">
+    <div style="font-size:13px;font-weight:700;color:#f1f5f9;margin-bottom:3px">Buying your first home or remortgaging?</div>
+    <div style="font-size:12px;color:#94a3b8">Browse UK mortgage &amp; property buying guides <span style="color:#f59e0b;white-space:nowrap">→ Browse on Amazon</span></div>
+    <div style="font-size:10px;color:#475569;margin-top:3px">As an Amazon Associate we earn from qualifying purchases.</div>
+  </div>
+</div>
+
+<!-- Related Tools -->
+<h2 style="font-size:15px;font-weight:700;color:#94a3b8;text-transform:uppercase;letter-spacing:.05em;margin-bottom:14px;max-width:720px;margin-left:auto;margin-right:auto;padding:0 16px">Related Tools</h2>
+<div style="max-width:720px;margin:0 auto 32px;display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:10px;padding:0 16px">
+  <a href="https://mortgage-calculator.tabutility.com/" style="display:block;background:rgba(30,41,59,1);border:1px solid rgba(255,255,255,0.12);border-radius:10px;padding:12px 16px;text-decoration:none;color:inherit">
+    <div style="font-size:13px;font-weight:600;color:#f1f5f9">Mortgage Affordability</div>
+    <div style="font-size:11px;color:#94a3b8;margin-top:2px">Calculators</div>
+  </a>
+  <a href="https://mortgage-affordability-calculator.tabutility.com/" style="display:block;background:rgba(30,41,59,1);border:1px solid rgba(255,255,255,0.12);border-radius:10px;padding:12px 16px;text-decoration:none;color:inherit">
+    <div style="font-size:13px;font-weight:600;color:#f1f5f9">Mortgage Affordability Calculator</div>
+    <div style="font-size:11px;color:#94a3b8;margin-top:2px">Calculators</div>
+  </a>
+  <a href="https://uk-stamp-duty-calculator.tabutility.com/" style="display:block;background:rgba(30,41,59,1);border:1px solid rgba(255,255,255,0.12);border-radius:10px;padding:12px 16px;text-decoration:none;color:inherit">
+    <div style="font-size:13px;font-weight:600;color:#f1f5f9">Stamp Duty Calculator</div>
+    <div style="font-size:11px;color:#94a3b8;margin-top:2px">Calculators</div>
+  </a>
+  <a href="https://rental-yield.tabutility.com/" style="display:block;background:rgba(30,41,59,1);border:1px solid rgba(255,255,255,0.12);border-radius:10px;padding:12px 16px;text-decoration:none;color:inherit">
+    <div style="font-size:13px;font-weight:600;color:#f1f5f9">Rental Yield Calculator</div>
+    <div style="font-size:11px;color:#94a3b8;margin-top:2px">Calculators</div>
+  </a>
+</div>
+
+<!-- Bottom ad slot -->
+<div style="max-width:720px;margin:0 auto 24px;text-align:center;padding:0 16px">
+  <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-7039091592734005" data-ad-slot="auto" data-ad-format="auto" data-full-width-responsive="true"></ins>
+  <script>(adsbygoogle=window.adsbygoogle||[]).push({});</script>
+</div>
+
+<script>
+// ── UK regions with council tax (Band D annual, 2024/25) and avg property prices ──
+const REGIONS = [
+  {id:'london',      name:'London',               ct:1855, avgPrice:520000},
+  {id:'south-east',  name:'South East',            ct:2097, avgPrice:390000},
+  {id:'south-west',  name:'South West',            ct:2163, avgPrice:340000},
+  {id:'east',        name:'East of England',       ct:2176, avgPrice:360000},
+  {id:'east-mid',    name:'East Midlands',         ct:2173, avgPrice:245000},
+  {id:'west-mid',    name:'West Midlands',         ct:2183, avgPrice:255000},
+  {id:'yorkshire',   name:'Yorkshire & Humber',    ct:2178, avgPrice:220000},
+  {id:'north-west',  name:'North West',            ct:2218, avgPrice:235000},
+  {id:'north-east',  name:'North East',            ct:2307, avgPrice:170000},
+  {id:'wales',       name:'Wales',                 ct:1955, avgPrice:220000},
+  {id:'scotland',    name:'Scotland',              ct:1528, avgPrice:200000},
+  {id:'ni',          name:'Northern Ireland',      ct:950,  avgPrice:185000},
+];
+
+// ── Mortgage types ──
+const MORTGAGES = {
+  residential:{
+    name:'Residential',emoji:'🏠',
+    note:'For owner-occupiers · 5% min deposit · up to 4.5× income',
+    rateDefault:4.75
+  },
+  btl:{
+    name:'Buy-to-Let',emoji:'🏘️',
+    note:'For landlords · 25% min deposit · rental coverage test',
+    rateDefault:5.50
+  },
+  sharedownership:{
+    name:'Shared Ownership',emoji:'🤝',
+    note:'Buy 10–75% share · smaller deposit needed · subsidised rent on remainder',
+    rateDefault:5.10
+  },
+  helptobuy:{
+    name:'Help to Buy',emoji:'🏗️',
+    note:'Wales only · new-build up to £300k · 20% gov loan · 5% deposit',
+    rateDefault:4.60
+  }
+};
+
+// ── App state ──
+const S = {
+  price: 300000,
+  regionId: 'south-east',
+  depAmt: 30000,
+  depPct: 10,
+  credit: null,
+  incType: null,
+  income1: 55000,
+  income2: 0
+};
+
+let activeType = null;
+
+// ── Build region dropdown ──
+const sel = document.getElementById('region');
+REGIONS.forEach(r => {
+  const o = document.createElement('option');
+  o.value = r.id;
+  o.textContent = `${r.name} — avg Council Tax £${r.ct.toLocaleString()}/yr`;
+  if (r.id === 'south-east') o.selected = true;
+  sel.appendChild(o);
+});
+updateCtNote();
+
+function updateCtNote(){
+  const r = REGIONS.find(x => x.id === document.getElementById('region').value);
+  if(r) document.getElementById('ctNote').textContent =
+    `Council Tax: approx £${Math.round(r.ct/12)}/mo (Band D average)`;
+}
+sel.addEventListener('change', updateCtNote);
+
+// ── Helpers ──
+function fmtGBP(n){ return '£' + Math.round(n).toLocaleString('en-GB'); }
+
+function goStep(n){
+  if(n === 2){ S.price = +document.getElementById('price').value || 300000; S.regionId = document.getElementById('region').value; }
+  [1,2,3,4].forEach(i => {
+    document.getElementById('step'+i).classList.add('hidden');
+    const dot = document.getElementById('sd'+i);
+    if(i < n){ dot.className = 'step-dot done'; dot.textContent = '✓'; }
+    else if(i === n){ dot.className = 'step-dot active'; dot.textContent = i; }
+    else{ dot.className = 'step-dot'; dot.textContent = i; }
+    if(i < 4) document.getElementById('sl'+i).className = 'step-line' + (i < n ? ' done' : '');
+  });
+  document.getElementById('step'+n).classList.remove('hidden');
+  document.getElementById('results').classList.add('hidden');
+  window.scrollTo({top: 0, behavior: 'smooth'});
+}
+
+function pick(key, val, el){
+  S[key] = val;
+  el.closest('.opts').querySelectorAll('.opt').forEach(o => o.classList.remove('sel'));
+  el.classList.add('sel');
+}
+
+function syncDep(src){
+  const price = +document.getElementById('price').value || S.price;
+  if(src === 'amt'){
+    const a = +document.getElementById('depAmt').value || 0;
+    S.depAmt = a; S.depPct = price > 0 ? +(a / price * 100).toFixed(1) : 0;
+    document.getElementById('depPct').value = S.depPct;
+  } else {
+    const p = +document.getElementById('depPct').value || 0;
+    S.depPct = p; S.depAmt = Math.round(price * p / 100);
+    document.getElementById('depAmt').value = S.depAmt;
+  }
+  const ltv = Math.min(100 - S.depPct, 100);
+  document.getElementById('ltvPct').textContent = ltv.toFixed(0) + '% LTV';
+  document.getElementById('ltvFill').style.width = Math.min(S.depPct, 100) + '%';
+  const note = document.getElementById('depNote');
+  if(S.depPct < 5) note.textContent = '⚠️ Below 5% — very few lenders accept below 5% deposit';
+  else if(S.depPct < 10) note.textContent = 'ℹ️ 5–10% deposit — limited lenders, mortgage guarantee scheme may apply';
+  else if(S.depPct < 20) note.textContent = 'ℹ️ 10–20% deposit — most high street lenders, standard rates';
+  else if(S.depPct < 25) note.textContent = '✅ 20%+ deposit — good rate tier (80% LTV)';
+  else note.textContent = '✅ 25%+ deposit — best rates, Buy-to-Let eligible';
+}
+
+function getEligibility(){
+  const pct = S.depPct, loan = S.price - S.depAmt;
+  const ltv = 100 - pct;
+  const inc = S.incType;
+  const cr = S.credit;
+  const res = {};
+
+  // Residential
+  if(pct >= 5 && cr !== 'poor'){
+    res.residential = (pct >= 25 && cr === 'excellent') ? 'best' : 'yes';
+  } else if(pct >= 5 && cr === 'poor'){
+    res.residential = 'partial'; // specialist lenders
+  } else {
+    res.residential = 'no';
+  }
+
+  // BTL — needs 25% deposit, landlord income type or btl
+  if(pct >= 25 && (inc === 'btl' || inc === 'paye' || inc === 'selfemployed' || inc === 'contractor') && cr !== 'poor'){
+    res.btl = inc === 'btl' ? 'best' : 'yes';
+  } else if(pct >= 20 && cr !== 'poor'){
+    res.btl = 'partial'; // some lenders do 80% LTV BTL
+  } else {
+    res.btl = 'no';
+  }
+
+  // Shared Ownership — need 5%+ of the share value, not full price
+  if(S.price <= 500000 && cr !== 'poor' && pct >= 5){
+    res.sharedownership = (pct < 25 && pct >= 5) ? 'best' : 'yes';
+  } else if(cr === 'poor' && pct >= 10){
+    res.sharedownership = 'partial';
+  } else {
+    res.sharedownership = 'no';
+  }
+
+  // Help to Buy — Wales only, new build, max price £300k
+  if(S.regionId === 'wales' && S.price <= 300000 && pct >= 5){
+    res.helptobuy = 'yes';
+  } else if(S.regionId !== 'wales'){
+    res.helptobuy = 'no'; // England scheme closed
+  } else {
+    res.helptobuy = 'no';
+  }
+
+  return res;
+}
+
+function getIncomeMultiple(){
+  const inc1 = +document.getElementById('income1').value || S.income1;
+  const inc2 = +document.getElementById('income2').value || 0;
+  const combined = inc1 + inc2;
+  const isSE = S.incType === 'selfemployed';
+  const mult45 = combined * 4.5;
+  const mult4 = combined * 4.0;
+  const mult55 = combined * 5.5;
+  return { combined, mult4, mult45, mult55 };
+}
+
+function getDefaultRate(){
+  if(!activeType) return 4.75;
+  return MORTGAGES[activeType]?.rateDefault || 4.75;
+}
+
+function calcMonthly(){
+  const loanAmt = +document.getElementById('adjLoan').value || (S.price - S.depAmt);
+  const rate = +document.getElementById('adjRate').value || 4.75;
+  const term = +document.getElementById('adjTerm').value || 30;
+  const insInput = +document.getElementById('adjIns').value;
+  const region = REGIONS.find(r => r.id === S.regionId) || REGIONS[0];
+
+  const mr = rate / 100 / 12;
+  const n = term * 12;
+  const pi = mr === 0 ? loanAmt / n : loanAmt * (mr * Math.pow(1 + mr, n)) / (Math.pow(1 + mr, n) - 1);
+
+  const ct = region.ct / 12;
+  const ins = insInput > 0 ? insInput / 12 : S.price * 0.00125 / 12; // ~0.125% of value/yr
+
+  return { pi, ct, ins, loanAmt, rate, term, region, total: pi + ct + ins };
+}
+
+function renderBreakdown(){
+  const p = calcMonthly();
+  const region = p.region;
+  const rate = p.rate;
+  const term = p.term;
+  const rows = [
+    {l:'Principal & Interest', s:`${rate}% · ${term}yr repayment`, v: p.pi},
+    {l:'Council Tax', s:`${region.name} avg (Band D) — paid separately to council`, v: p.ct},
+    {l:'Buildings Insurance', s:'~0.125% of property value/yr (est.)', v: p.ins},
+  ];
+
+  document.getElementById('pitiRows').innerHTML = rows.map(r => `
+    <div class="piti-row">
+      <div class="piti-label">${r.l}<small>${r.s}</small></div>
+      <div class="piti-val">${fmtGBP(r.v)}<span style="font-size:11px;color:#64748b">/mo</span></div>
+    </div>`).join('');
+  document.getElementById('pitiTotal').textContent = fmtGBP(p.total) + '/mo';
+  const typeName = activeType ? MORTGAGES[activeType].name : 'Mortgage';
+  document.getElementById('pitiTitle').textContent = `📋 ${typeName} — Monthly Cost Breakdown`;
+
+  // Key stats
+  const totalInterest = p.pi * term * 12 - p.loanAmt;
+  document.getElementById('keyStats').innerHTML = `
+    <div class="rate-card"><div class="rate-num">${fmtGBP(p.loanAmt)}</div><div class="rate-lbl">Loan Amount</div></div>
+    <div class="rate-card"><div class="rate-num">${fmtGBP(p.pi)}</div><div class="rate-lbl">Mortgage Payment</div></div>
+    <div class="rate-card"><div class="rate-num">${fmtGBP(totalInterest)}</div><div class="rate-lbl">Total Interest (${term}yr)</div></div>`;
+}
+
+function selectType(type){
+  activeType = type;
+  document.querySelectorAll('.loan-card').forEach(c => c.classList.remove('active'));
+  document.querySelector(`[data-type="${type}"]`)?.classList.add('active');
+  document.getElementById('adjRate').value = MORTGAGES[type].rateDefault;
+  renderBreakdown();
+  document.getElementById('pitiCard').scrollIntoView({behavior: 'smooth', block: 'nearest'});
+}
+
+function showResults(){
+  if(!S.credit){ alert('Please select your credit profile.'); return; }
+  if(!S.incType){ alert('Please select your income type.'); return; }
+
+  S.price = +document.getElementById('price').value || 300000;
+  S.regionId = document.getElementById('region').value;
+  S.depAmt = +document.getElementById('depAmt').value || 0;
+  S.depPct = S.price > 0 ? S.depAmt / S.price * 100 : 0;
+  S.income1 = +document.getElementById('income1').value || 55000;
+  S.income2 = +document.getElementById('income2').value || 0;
+
+  [1,2,3,4].forEach(i => {
+    document.getElementById('step'+i).classList.add('hidden');
+    const dot = document.getElementById('sd'+i); dot.className = 'step-dot done'; dot.textContent = '✓';
+    if(i < 4) document.getElementById('sl'+i).className = 'step-line done';
+  });
+  document.getElementById('results').classList.remove('hidden');
+
+  // Income multiple display
+  const { combined, mult4, mult45, mult55 } = getIncomeMultiple();
+  document.getElementById('borrowAmt').textContent = fmtGBP(mult45);
+  document.getElementById('borrowSub').textContent = `Based on 4.5× gross income (${fmtGBP(combined)}/yr)`;
+  document.getElementById('borrowRange').innerHTML = `
+    <div class="borrow-range-item"><div class="borrow-range-val">${fmtGBP(mult4)}</div><div class="borrow-range-lbl">4× (cautious)</div></div>
+    <div class="borrow-range-item"><div class="borrow-range-val">${fmtGBP(mult45)}</div><div class="borrow-range-lbl">4.5× (standard)</div></div>
+    <div class="borrow-range-item"><div class="borrow-range-val">${fmtGBP(mult55)}</div><div class="borrow-range-lbl">5.5× (max)</div></div>`;
+
+  // Eligibility grid
+  const elig = getEligibility();
+  const order = ['residential','btl','sharedownership','helptobuy'];
+  const badgeMap = {best:'BEST FIT', yes:'ELIGIBLE', partial:'MAY QUALIFY', no:'NOT ELIGIBLE'};
+  const badgeClass = {best:'badge-best', yes:'badge-yes', partial:'badge-partial', no:'badge-no'};
+
+  document.getElementById('loanGrid').innerHTML = order.map(type => {
+    const m = MORTGAGES[type], e = elig[type];
+    return `<div class="loan-card${e === 'no' ? ' no' : ''}" data-type="${type}" onclick="${e === 'no' ? '' : `selectType('${type}')`}" title="${e === 'no' ? 'Not eligible based on your inputs' : 'Click to see monthly breakdown'}">
+      <span class="loan-badge ${badgeClass[e]}">${badgeMap[e]}</span>
+      <div style="font-size:22px;margin-bottom:6px">${m.emoji}</div>
+      <div class="loan-name">${m.name}</div>
+      <div class="loan-min" style="margin-top:4px">${m.note}</div>
+      ${e !== 'no' ? `<div style="font-size:11px;color:#4f46e5;font-weight:700;margin-top:8px">Default rate: ${m.rateDefault}% — click for breakdown →</div>` : ''}
+    </div>`;
+  }).join('');
+
+  // Set default loan amount to min(price-deposit, 4.5x income)
+  const loanFromDeposit = S.price - S.depAmt;
+  const loanFromIncome = mult45;
+  const defaultLoan = Math.min(loanFromDeposit, loanFromIncome);
+  document.getElementById('adjLoan').value = Math.round(defaultLoan);
+
+  // Auto-select best type
+  const best = order.find(t => elig[t] === 'best') || order.find(t => elig[t] === 'yes') || order.find(t => elig[t] === 'partial');
+  if(best) selectType(best);
+
+  const eligCount = order.filter(t => elig[t] !== 'no').length;
+  const region = REGIONS.find(r => r.id === S.regionId);
+  document.getElementById('res-title').textContent = `${eligCount} Mortgage Type${eligCount !== 1 ? 's' : ''} Available`;
+  document.getElementById('res-sub').textContent = `${fmtGBP(S.price)} property · ${fmtGBP(S.depAmt)} deposit (${S.depPct.toFixed(1)}%) · ${region?.name || ''}`;
+
+  window.scrollTo({top: 0, behavior: 'smooth'});
+}
+
+function restart(){
+  activeType = null;
+  document.getElementById('results').classList.add('hidden');
+  document.querySelectorAll('.opt').forEach(o => o.classList.remove('sel'));
+  S.credit = null; S.incType = null;
+  goStep(1);
+}
+
+// Init
+syncDep('amt');
+</script>
+</body>
+</html>
