@@ -282,6 +282,11 @@ ins.adsbygoogle,.ad-banner iframe,.ad-slot iframe,.ad-container iframe{visibilit
       <p id="res-sub"></p>
     </div>
 
+    <!-- Disclaimer -->
+    <div style="background:rgba(245,158,11,.08);border:1px solid rgba(245,158,11,.3);border-radius:10px;padding:12px 16px;margin-bottom:18px;font-size:12px;color:#fcd34d;line-height:1.5">
+      <strong>⚠️ Illustrative estimates only — not financial advice.</strong> Figures are indicative based on typical income multiples and publicly available rates. Actual lending is subject to a lender's underwriting, credit check, and affordability assessment. Speak to a qualified, FCA-regulated mortgage adviser before making any financial decision. Rental income coverage and property-specific factors are not assessed here.
+    </div>
+
     <!-- Max borrowing hero -->
     <div class="borrow-hero">
       <div class="borrow-label">Estimated Maximum Borrowing</div>
@@ -474,9 +479,9 @@ const REGIONS = [
 
 const MORTGAGES = {
   residential:     {name:'Residential',    emoji:'🏠', note:'Owner-occupier · 5% min deposit · up to 4.5–5.5× income', rateDefault:4.75},
-  btl:             {name:'Buy-to-Let',     emoji:'🏘️', note:'Landlord · 25% min deposit · rental coverage test',        rateDefault:5.50},
+  btl:             {name:'Buy-to-Let',     emoji:'🏘️', note:'Landlord · 25% deposit · eligible via rental-income coverage test (not assessed here — consult a broker)', rateDefault:5.50, infoOnly:true},
   sharedownership: {name:'Shared Ownership',emoji:'🤝',note:'Buy 10–75% share · mortgage on your share only · rent on remainder', rateDefault:5.10},
-  helptobuy:       {name:'Help to Buy',    emoji:'🏗️', note:'Wales only · new-build up to £300k · 20% gov loan · 5% deposit', rateDefault:4.60},
+  helptobuy:       {name:'Help to Buy',    emoji:'🏗️', note:'Scheme closed 31 March 2023 — shown for reference only. Check gov.uk for any successor scheme.', rateDefault:4.60, closed:true},
 };
 
 const S = {price:300000, regionId:'south-east', depAmt:30000, depPct:10, credit:null, incType:null, income1:55000, income2:0};
@@ -587,14 +592,9 @@ function getEligibility(){
   }
 
   // ── Buy-to-Let ──
-  // BTL uses rental income, not salary multiple, but needs min 25% deposit and reasonable credit
-  if(pct >= 25 && cr !== 'poor'){
-    res.btl = (inc === 'btl') ? 'best' : 'yes';
-  } else if(pct >= 20 && cr !== 'poor'){
-    res.btl = 'partial';
-  } else {
-    res.btl = 'no';
-  }
+  // BTL eligibility depends on rental income coverage (not collected here).
+  // Show as 'info' — always informational, never an eligibility verdict.
+  res.btl = 'info';
 
   // ── Shared Ownership ──
   // Buyer only mortgages their share (default 50%). Max share loan ≈ share_value - deposit.
@@ -611,16 +611,10 @@ function getEligibility(){
     res.sharedownership = 'no';
   }
 
-  // ── Help to Buy (Wales only, new-build ≤ £300k) ──
-  // Gov loan = 20%; mortgage = price × 0.75 (with 5% dep + 20% gov loan)
-  const htbLoan = price * 0.75;
-  if(S.regionId === 'wales' && price <= 300000 && pct >= 5 && cr !== 'poor'){
-    if(htbLoan > maxBorrow55){ res.helptobuy = 'no'; }
-    else if(htbLoan > maxBorrow45){ res.helptobuy = 'partial'; }
-    else { res.helptobuy = 'yes'; }
-  } else {
-    res.helptobuy = 'no';
-  }
+  // ── Help to Buy ──
+  // Both the English AND Welsh Help to Buy equity loan schemes closed on 31 March 2023.
+  // Shown as 'closed' — reference only; no current eligibility verdict.
+  res.helptobuy = 'closed';
 
   return res;
 }
@@ -752,18 +746,19 @@ function showResults(){
 
   // Eligibility grid
   const elig = getEligibility();
-  const order = ['residential','btl','sharedownership','helptobuy'];
-  const badgeMap = {best:'BEST FIT',yes:'ELIGIBLE',partial:'MAY QUALIFY',no:'NOT ELIGIBLE'};
-  const badgeClass = {best:'badge-best',yes:'badge-yes',partial:'badge-partial',no:'badge-no'};
+  const order = ['residential','sharedownership','btl','helptobuy'];
+  const badgeMap = {best:'BEST FIT',yes:'ELIGIBLE',partial:'MAY QUALIFY',no:'NOT ELIGIBLE',info:'ASK A BROKER',closed:'SCHEME CLOSED'};
+  const badgeClass = {best:'badge-best',yes:'badge-yes',partial:'badge-partial',no:'badge-no',info:'badge-no',closed:'badge-no'};
 
   document.getElementById('loanGrid').innerHTML = order.map(type=>{
     const m = MORTGAGES[type], e = elig[type];
-    return `<div class="loan-card${e==='no'?' no':''}" data-type="${type}" onclick="${e==='no'?'':(`selectType('${type}')`)}" title="${e==='no'?'Not eligible based on your inputs':'Click to see monthly breakdown'}">
+    const isInteractive = (e!=='no' && e!=='info' && e!=='closed');
+    return `<div class="loan-card${isInteractive?'':' no'}" data-type="${type}" onclick="${isInteractive?`selectType('${type}`)`:''}" title="${isInteractive?'Click to see monthly breakdown':m.note}">
       <span class="loan-badge ${badgeClass[e]}">${badgeMap[e]}</span>
       <div style="font-size:22px;margin-bottom:6px">${m.emoji}</div>
       <div class="loan-name">${m.name}</div>
       <div class="loan-min" style="margin-top:4px">${m.note}</div>
-      ${e!=='no'?`<div style="font-size:11px;color:#4f46e5;font-weight:700;margin-top:8px">Rate: ${m.rateDefault}% default — click for breakdown →</div>`:''}
+      ${isInteractive?`<div style="font-size:11px;color:#4f46e5;font-weight:700;margin-top:8px">Rate: ${m.rateDefault}% default — click for breakdown →</div>`:''}
     </div>`;
   }).join('');
 
@@ -777,8 +772,9 @@ function showResults(){
   document.getElementById('res-title').textContent = `${eligCount} Mortgage Type${eligCount!==1?'s':''} Available`;
   document.getElementById('res-sub').textContent = `${fmtGBP(S.price)} property · ${fmtGBP(S.depAmt)} deposit (${S.depPct.toFixed(1)}%) · ${region?.name||''}`;
 
-  // Auto-select best eligible type
-  const best = order.find(t=>elig[t]==='best')||order.find(t=>elig[t]==='yes')||order.find(t=>elig[t]==='partial');
+  // Auto-select best eligible type (skip info/closed/no)
+  const selectable = ['best','yes','partial'];
+  const best = order.find(t=>selectable.includes(elig[t]));
   if(best) selectType(best);
 
   window.scrollTo({top:0,behavior:'smooth'});
