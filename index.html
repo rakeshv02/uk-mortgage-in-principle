@@ -753,7 +753,8 @@ function showResults(){
   document.getElementById('loanGrid').innerHTML = order.map(type=>{
     const m = MORTGAGES[type], e = elig[type];
     const isInteractive = (e!=='no' && e!=='info' && e!=='closed');
-    return `<div class="loan-card${isInteractive?'':' no'}" data-type="${type}" onclick="${isInteractive?`selectType('${type}`)`:''}" title="${isInteractive?'Click to see monthly breakdown':m.note}">
+    const clickFn = isInteractive ? "selectType('"+type+"')" : '';
+    return `<div class="loan-card${isInteractive?'':' no'}" data-type="${type}" onclick="${clickFn}" title="${isInteractive?'Click to see monthly breakdown':m.note}">
       <span class="loan-badge ${badgeClass[e]}">${badgeMap[e]}</span>
       <div style="font-size:22px;margin-bottom:6px">${m.emoji}</div>
       <div class="loan-name">${m.name}</div>
