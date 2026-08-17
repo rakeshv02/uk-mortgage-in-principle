@@ -768,7 +768,7 @@ function showResults(){
   const cappedLoan = combined > 0 ? Math.min(actualLoan, mult45) : actualLoan;
   document.getElementById('adjLoan').value = Math.round(cappedLoan);
 
-  const eligCount = order.filter(t=>elig[t]!=='no').length;
+  const eligCount = order.filter(t=>['best','yes','partial'].includes(elig[t])).length;
   const region = REGIONS.find(r=>r.id===S.regionId);
   document.getElementById('res-title').textContent = `${eligCount} Mortgage Type${eligCount!==1?'s':''} Available`;
   document.getElementById('res-sub').textContent = `${fmtGBP(S.price)} property · ${fmtGBP(S.depAmt)} deposit (${S.depPct.toFixed(1)}%) · ${region?.name||''}`;
